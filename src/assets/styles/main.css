@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium 
+           bg-yellow-400 text-gray-900 hover:bg-yellow-500 
+           dark:bg-yellow-500 dark:text-gray-900 dark:hover:bg-yellow-400
+           transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-yellow-600 dark:text-gray-300 dark:hover:text-yellow-400 
+           transition-all duration-300 font-medium relative;
+  }
+  
+  .nav-link-active {
+    @apply text-yellow-600 dark:text-yellow-400;
+  }
+  
+  .nav-link-mobile {
+    @apply text-gray-700 hover:text-yellow-600 dark:text-gray-300 dark:hover:text-yellow-400 
+           transition-all duration-300 font-medium block py-2;
+  }
+  
+  .nav-link-active-mobile {
+    @apply text-yellow-600 dark:text-yellow-400;
+  }
+  
+  .social-icon {
+    @apply w-6 h-6 text-gray-700 hover:text-yellow-600 
+           dark:text-gray-300 dark:hover:text-yellow-400
+           transition-all duration-300 transform hover:scale-110;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
